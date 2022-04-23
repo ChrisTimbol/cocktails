@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,20 @@
     <title>CocktailDB</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <button type="button" id="randomButton">Surprise me Button</button>
+    <div class="searchContainer">
+        <h1 id="header"> Find a Cocktail</h1>
+        <input type="text" id="inputText" placeholder="Drink Name">
+
+        <div class="buttonContainer">
+        <button type="button" id="searchButton">Search by drink name</button>
+        <button type="button" id="randomButton">Surprise me </button>
+        </div>
+    </div>
+
+    <div id="mainDrinkContainer"></div>
     <script src="index.js"></script>
 </body>
+
 </html>
