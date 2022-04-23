@@ -30,18 +30,20 @@ function randomize() { // fetchs a random drink and details
 }
 
 function showResults(result) {
+
     const drinkNames = result.drinks;
     console.log(drinkNames)
-    function declareVar() {
-        let div = document.createElement('div')
-        let thumbnail = document.createElement('img')
-        let drink = document.createElement('h3')
-        let instructions = document.createElement('p')
-        return { div, thumbnail, drink, instructions };
-    }
 
+    drinkNames.forEach((e) => {
 
-    drinkNames.forEach(e => {
+        const drinkIngr = [e.strIngredient1, e.strIngredient2, e.strIngredient3,
+        e.strIngredient4, e.strIngredient5, e.strIngredient6, e.strIngredient7,
+        e.strIngredient8, e.strIngredient9, e.strIngredient10, e.strIngredient11,
+        e.strIngredient12, e.strIngredient13, e.strIngredient14, e.strIngredient15]
+        const drinkMeas = [e.strMeasure1, e.strMeasure2, e.strMeasure3,
+        e.strMeasure4, e.strMeasure5, e.strMeasure6, e.strMeasure7, e.strMeasure8,
+        e.strMeasure9, e.strMeasure10, e.strMeasure11, e.strMeasure12, e.strMeasure13,
+        e.strMeasure14, e.strMeasure15]
         let { div, thumbnail, drink, instructions } = declareVar();
 
         div.classList = "drinkContainer"
@@ -53,6 +55,24 @@ function showResults(result) {
         div.appendChild(drink)
         instructions.innerText = e.strInstructions
         div.appendChild(instructions)
+
+        drinkIngr.forEach((e, i) => {
+            if (e !== null) {
+                let drinkIngredients = document.createElement('li')
+
+                drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e: " " + e
+                div.appendChild(drinkIngredients)
+            }
+        })
     })
+
+    function declareVar() {
+        let div = document.createElement('div')
+        let thumbnail = document.createElement('img')
+        let drink = document.createElement('h3')
+        let instructions = document.createElement('p')
+        return { div, thumbnail, drink, instructions };
+    }
+
 
 }
