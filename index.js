@@ -21,6 +21,12 @@ function searchDrink() { // search by title
     drinkContainer.innerHTML = ""; // reset drink container
 }
 
+
+
+//interactive bar
+// choose what bar u want to go to
+// bartender talks to u
+// get served a drink
 function randomize() { // fetchs a random drink and details
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php') // fetchs json
         .then(res => res.json())  //res.json takes a json and parses it to produce a javascript object
@@ -35,7 +41,6 @@ function showResults(result) {
     console.log(drinkNames)
 
     drinkNames.forEach((e) => {
-
         const drinkIngr = [e.strIngredient1, e.strIngredient2, e.strIngredient3,
         e.strIngredient4, e.strIngredient5, e.strIngredient6, e.strIngredient7,
         e.strIngredient8, e.strIngredient9, e.strIngredient10, e.strIngredient11,
@@ -44,7 +49,9 @@ function showResults(result) {
         e.strMeasure4, e.strMeasure5, e.strMeasure6, e.strMeasure7, e.strMeasure8,
         e.strMeasure9, e.strMeasure10, e.strMeasure11, e.strMeasure12, e.strMeasure13,
         e.strMeasure14, e.strMeasure15]
-        let { div, thumbnail, drink, instructions } = declareVar();
+
+
+        let { div, thumbnail, drink, category, instructions } = declareVar();
 
         div.classList = "drinkContainer"
         drinkContainer.appendChild(div)
@@ -53,7 +60,10 @@ function showResults(result) {
         div.appendChild(thumbnail)
         drink.innerText = e.strDrink
         div.appendChild(drink)
+        category.innerText = e.strCategory
+        div.appendChild(category)
         instructions.innerText = e.strInstructions
+
         div.appendChild(instructions)
 
         drinkIngr.forEach((e, i) => {
@@ -70,8 +80,9 @@ function showResults(result) {
         let div = document.createElement('div')
         let thumbnail = document.createElement('img')
         let drink = document.createElement('h3')
+        let category = document.createElement('h4')
         let instructions = document.createElement('p')
-        return { div, thumbnail, drink, instructions };
+        return { div, thumbnail, drink, category, instructions };
     }
 
 
