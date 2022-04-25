@@ -11,6 +11,32 @@ const searchButton = document.getElementById('searchButton').addEventListener("c
 })
 
 const drinkContainer = document.getElementById('mainDrinkContainer')
+let isDown = false;
+let startX;
+let scrollLeft;
+drinkContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    drinkContainer.classList.add('active');
+    startX = e.pageX - drinkContainer.offsetLeft;
+    scrollLeft = drinkContainer.scrollLeft;
+    });
+    drinkContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    drinkContainer.classList.remove('active');
+    });
+    drinkContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    drinkContainer.classList.remove('active');
+    });
+    drinkContainer.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - drinkContainer.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    drinkContainer.scrollLeft = scrollLeft - walk;
+    //   console.log(walk);
+    });
+
 
 
 function searchDrink() { // search by title
@@ -65,7 +91,17 @@ function showResults(result) {
         div.appendChild(instructions)
         readButton.innerHTML = "Read more"
         readButton.classList = "readButton"
-        readButton.onclick = readMore // read more func
+        readButton.addEventListener ('click', () => {
+            if (instructions.style.display === "none") {
+                instructions.style.display = "inline"
+
+                readButton.innerText = "Read less"
+            } else {
+                instructions.style.display = "none"
+                readButton.innerText = "Read more"
+            }
+        }) // read more func
+    
     
 
         drinkIngr.forEach((e, i) => {
@@ -86,20 +122,7 @@ function showResults(result) {
 
 
         div.appendChild(readButton)
-        function readMore() {
-            
-            
-            if (instructions.style.display === "none") {
-                instructions.style.display = "inline"
-         //       drinkIngredients.style.display = "inline"
-                readButton.innerText = "Read less"
-            } else {
-                instructions.style.display = "none"
-          //      drinkIngredients.style.display = "none"
-                readButton.innerText = "Read more"
-            }
 
-        }
     })
 
     function declareVar() {
@@ -112,7 +135,5 @@ function showResults(result) {
 
         return { div, thumbnail, drink, category, instructions, readButton };
     }
-
-
-
 }
+

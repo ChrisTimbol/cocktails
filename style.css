@@ -19,6 +19,7 @@
 
 .thumbnail-image {
     width: 300px;  
+    border-radius: 50%;
 
 }
 
@@ -27,11 +28,12 @@
     justify-content: center;
     flex: 0 0 33.33333%;
     position: absolute;
-    top: 600px;
-    left: 200px;
-    overflow-x: scroll;
+    top: 26vh;
+    left: 16vw;
+    overflow-x: hidden;
     width: 70vw;
-    
+ /*    cursor: grab; */
+
 }
 
 .drinkContainer {
