@@ -64,7 +64,6 @@ body {
 
 .drinkContainer:hover {
     transform: scale(1.07);
-    width: 50%;
     background-color: black;
 }
 
