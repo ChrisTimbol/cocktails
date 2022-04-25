@@ -23,10 +23,7 @@ function searchDrink() { // search by title
 
 
 
-//interactive bar
-// choose what bar u want to go to
-// bartender talks to u
-// get served a drink
+
 function randomize() { // fetchs a random drink and details
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php') // fetchs json
         .then(res => res.json())  //res.json takes a json and parses it to produce a javascript object
@@ -51,7 +48,7 @@ function showResults(result) {
         e.strMeasure14, e.strMeasure15]
 
 
-        let { div, thumbnail, drink, category, instructions } = declareVar();
+        let { div, thumbnail, drink, category, instructions, readButton } = declareVar();
 
         div.classList = "drinkContainer"
         drinkContainer.appendChild(div)
@@ -62,18 +59,47 @@ function showResults(result) {
         div.appendChild(drink)
         category.innerText = e.strCategory
         div.appendChild(category)
-        instructions.innerText = e.strInstructions
 
+        instructions.innerText = e.strInstructions
+        instructions.style.display = "none"
         div.appendChild(instructions)
+        readButton.innerHTML = "Read more"
+        readButton.classList = "readButton"
+        readButton.onclick = readMore // read more func
+    
 
         drinkIngr.forEach((e, i) => {
             if (e !== null) {
                 let drinkIngredients = document.createElement('li')
 
                 drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e: " " + e
+                drinkIngredients.classList = "drinkIngredients"
+                drinkIngredients.style.display = "none"
                 div.appendChild(drinkIngredients)
+                 readButton.addEventListener('click', () => {
+                    drinkIngredients.style.display === "none" ?
+                        drinkIngredients.style.display = "inline" : drinkIngredients.style.display = "none" 
+               
+                }) 
             }
         })
+
+
+        div.appendChild(readButton)
+        function readMore() {
+            
+            
+            if (instructions.style.display === "none") {
+                instructions.style.display = "inline"
+         //       drinkIngredients.style.display = "inline"
+                readButton.innerText = "Read less"
+            } else {
+                instructions.style.display = "none"
+          //      drinkIngredients.style.display = "none"
+                readButton.innerText = "Read more"
+            }
+
+        }
     })
 
     function declareVar() {
@@ -82,8 +108,11 @@ function showResults(result) {
         let drink = document.createElement('h3')
         let category = document.createElement('h4')
         let instructions = document.createElement('p')
-        return { div, thumbnail, drink, category, instructions };
+        let readButton = document.createElement('button')
+
+        return { div, thumbnail, drink, category, instructions, readButton };
     }
+
 
 
 }
