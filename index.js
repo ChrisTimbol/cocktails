@@ -78,6 +78,7 @@ function showResults(result) {
         div.appendChild(category)
         instructions.innerText = e.strInstructions
         instructions.style.display = "none"
+        instructions.style.backgroundColor = "black"
         div.appendChild(instructions)
         readButton.innerHTML = "Read more"
         readButton.classList = "readButton"
@@ -98,6 +99,7 @@ function showResults(result) {
                 drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e : " " + e
                 drinkIngredients.classList = "drinkIngredients"
                 drinkIngredients.style.display = "none"
+                drinkIngredients.style.backgroundColor = "black"
                 div.appendChild(drinkIngredients)
                 readButton.addEventListener('click', () => {
                     drinkIngredients.style.display === "none" ?
