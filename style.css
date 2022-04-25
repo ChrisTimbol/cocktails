@@ -37,8 +37,11 @@ body {
 }
 
 .mainDrinkContainer {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 500px;
+
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
@@ -133,6 +136,7 @@ body {
 .footer {
     display: flex;
     justify-content: center;
+
     color:white;
 
     
