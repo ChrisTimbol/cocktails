@@ -92,7 +92,7 @@ body {
 }
 
 .readButton {
-    font-size: 32px;
+    font-size: 1vw;
     background: black;
     color: white;
     margin-bottom: 0.8vh;
@@ -146,7 +146,7 @@ body {
     color:white;
 }
 .drinkName {
-    font-size: 66px;
+    font-size: 1.8vw;
 }
 
 .header { 
