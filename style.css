@@ -15,10 +15,33 @@ body {
     left: 1450px;
 }
 
-#inputText, #searchButton, #randomButton {
+.inputText, .searchButton, .randomButton {
+
     font-size: 36px;
-    font-family: American Typewriter, serif;
+    font-weight: bold;
+    font-family: serif;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 2px;
 }
+
+.inputText:hover, .searchButton:hover, .randomButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.inputText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .thumbnail-image {
     width: 300px;  
@@ -26,15 +49,15 @@ body {
 
 }
 
-#mainDrinkContainer {
+.mainDrinkContainer {
     display: flex;
     justify-content: center;
     position: absolute;
     top: 350px;
-    left: 16vw;
+    left: 1vw;
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 70vw;
+    width: 100vw;
     white-space: nowrap;
     transition: all 2s;
     transform: scale(0.92);
@@ -78,7 +101,7 @@ body {
     z-index: 0;
     width: 80vw;
     height: 80vh;
-    transition: opacity ;
+ /*    transition:  */
 }
 
 .bartenderImage2:hover {
@@ -88,6 +111,14 @@ body {
 
 .readButton {
     font-size: 0.8vw;
+    background: black;
+    color: white;
+/*     z-index: 1; */
+}
+
+.readButton:hover {
+    color: red;
+
 }
 
 .barText {
@@ -119,4 +150,25 @@ body {
     40% {width:0%}
     60% {width:0%;}
     100% {width:0%;}
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+
+    
+    color:white;
+    align-items: bottom;
+
+}
+
+.apiLink {
+    text-decoration: none;
+    color:gray;
+    font-size: 36px;
+    margin-bottom: -50px;
+}
+
+.drinkName {
+    font-size: 66px;
 }

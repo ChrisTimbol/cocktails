@@ -12,23 +12,25 @@
 <body>
 
     <figure class="barContainer">
-       <img src="bartenderCloudBox.png" class="bartenderImage">
-       <img src="bartenderCloudBox2.png" class="bartenderImage2">
-        <figcaption class="barText">What can i get you?
-        <div class="fadingEffect"></div>
+        <img src="bartenderCloudBox.png" class="bartenderImage">
+        <img src="bartenderCloudBox2.png" class="bartenderImage2">
+        <figcaption class="barText">What can I get you?
+            <div class="fadingEffect"></div>
         </figcaption>
     </figure>
 
 
-    <div id="mainDrinkContainer"> </div>
+    <div class="mainDrinkContainer"> </div>
     <div class="searchContainer">
-        <input type="text" id="inputText" placeholder="Drink Name">
+        <input type="text" class="inputText" placeholder="Drink Name">
         <div class="buttonContainer">
-            <button type="button" id="searchButton">Search by drink name</button>
-            <button type="button" id="randomButton">Surprise me </button>
+            <button type="button" class="searchButton">Search by drink name</button>
+            <button type="button" class="randomButton">Surprise me </button>
         </div>
     </div>
-
+    <footer class="footer">
+        <a href="https://www.thecocktaildb.com/api.php" class="apiLink">Created with CocktailDB</a>
+    </footer>
     <script src="index.js"></script>
 </body>
 

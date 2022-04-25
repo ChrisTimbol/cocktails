@@ -1,16 +1,20 @@
-// search cocktail by name
-//  randomize a drink
-// search by ingredient
-// filter by alochol
-const randomButton = document.getElementById('randomButton').addEventListener("click", () => {
+// add input box click enter
+// add style to box and buttons
+// add better background
+// add footer to api
+// fix char smile
+// add text responses to cloudbox
+// fix github page
+
+const randomButton = document.getElementsByClassName('randomButton')[0].addEventListener("click", () => {
     randomize()
 })
-const inputText = document.getElementById('inputText')
-const searchButton = document.getElementById('searchButton').addEventListener("click", () => {
+const inputText = document.getElementsByClassName('inputText')[0]
+const searchButton = document.getElementsByClassName('searchButton')[0].addEventListener("click", () => {
     searchDrink()
 })
 
-const drinkContainer = document.getElementById('mainDrinkContainer')
+const drinkContainer = document.getElementsByClassName('mainDrinkContainer')[0]
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -73,6 +77,7 @@ function showResults(result) {
         thumbnail.classList = "thumbnail-image"
         div.appendChild(thumbnail)
         drink.innerText = e.strDrink
+        drink.classList = "drinkName"
         div.appendChild(drink)
         category.innerText = e.strCategory
         div.appendChild(category)
@@ -80,16 +85,16 @@ function showResults(result) {
         instructions.style.display = "none"
         instructions.style.backgroundColor = "black"
         div.appendChild(instructions)
-        readButton.innerHTML = "Read more"
+        readButton.innerHTML = "Read more.."
         readButton.classList = "readButton"
         readButton.addEventListener('click', () => {
             if (instructions.style.display === "none") {
                 instructions.style.display = "inline"
 
-                readButton.innerText = "Read less"
+                readButton.innerText = "Read less.."
             } else {
                 instructions.style.display = "none"
-                readButton.innerText = "Read more"
+                readButton.innerText = "Read more.."
             }
         })
 
