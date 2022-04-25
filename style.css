@@ -37,11 +37,8 @@ body {
 }
 
 .mainDrinkContainer {
-    display: flex;
-    justify-content: center;
     position: absolute;
     top: 500px;
-
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
@@ -61,6 +58,7 @@ body {
     font-size: 30px;
     color: white;
     justify-content: center;
+    width: 100vw;
     
 }
 
@@ -136,6 +134,8 @@ body {
     display: flex;
     justify-content: center;
     color:white;
+
+    
 }
 
 .apiLink {
