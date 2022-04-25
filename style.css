@@ -5,7 +5,7 @@
 
 body {
     background-color: black;
-    height: 101vh;
+    height: 100vh;
 }
 .searchContainer {
     display: flex;
@@ -39,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 50vw;
+    bottom: 50vh;
     width: 100vw;
     white-space: nowrap;
     transition: all 2s;
@@ -56,7 +56,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 1vw;
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     color: white;
     justify-content: center;
     width: 100vw;
@@ -110,14 +110,14 @@ body {
     font-size: 1.02vw;
     font-weight: bolder;
     position: absolute;
-    top:  11vh;
-    left: 33vw;
+    top:  12vh;
+    left: 33.5vw;
 /*     white-space: nowrap; */
 }
 .fadingEffect {
     position:absolute;
     top:0; bottom:0; right: 0;
-    width:100%;
+    width:0;
     background:white;
     animation-iteration-count: 1;
     animation: shower 2s  alternate ease-in;
@@ -125,7 +125,7 @@ body {
 }
 
 @keyframes shower {
-    0% {width:70%;}
+    0% {width:100%;}
     40% {width:0%;}
     60% {width:0%;}
     100% {width:0%;}
@@ -134,10 +134,7 @@ body {
 .footer {
     display: flex;
     justify-content: center;
-    
     color:white;
-
-    
 }
 
 .apiLink {
@@ -151,4 +148,8 @@ body {
 }
 .drinkName {
     font-size: 66px;
+}
+
+.header {
+    color: white;
 }
