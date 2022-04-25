@@ -19,25 +19,23 @@ drinkContainer.addEventListener('mousedown', (e) => {
     drinkContainer.classList.add('active');
     startX = e.pageX - drinkContainer.offsetLeft;
     scrollLeft = drinkContainer.scrollLeft;
-    });
-    drinkContainer.addEventListener('mouseleave', () => {
+});
+drinkContainer.addEventListener('mouseleave', () => {
     isDown = false;
     drinkContainer.classList.remove('active');
-    });
-    drinkContainer.addEventListener('mouseup', () => {
+});
+drinkContainer.addEventListener('mouseup', () => {
     isDown = false;
     drinkContainer.classList.remove('active');
-    });
-    drinkContainer.addEventListener('mousemove', (e) => {
-    if(!isDown) return;
+});
+drinkContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - drinkContainer.offsetLeft;
     const walk = (x - startX) * 3; //scroll-fast
     drinkContainer.scrollLeft = scrollLeft - walk;
     //   console.log(walk);
-    });
-
-
+});
 
 function searchDrink() { // search by title
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputText.value}`) // fetchs json
@@ -46,9 +44,6 @@ function searchDrink() { // search by title
         .catch(err => console.log("Search Failed: " + err))
     drinkContainer.innerHTML = ""; // reset drink container
 }
-
-
-
 
 function randomize() { // fetchs a random drink and details
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php') // fetchs json
@@ -59,7 +54,6 @@ function randomize() { // fetchs a random drink and details
 }
 
 function showResults(result) {
-
     const drinkNames = result.drinks;
     console.log(drinkNames)
 
@@ -72,10 +66,7 @@ function showResults(result) {
         e.strMeasure4, e.strMeasure5, e.strMeasure6, e.strMeasure7, e.strMeasure8,
         e.strMeasure9, e.strMeasure10, e.strMeasure11, e.strMeasure12, e.strMeasure13,
         e.strMeasure14, e.strMeasure15]
-
-
         let { div, thumbnail, drink, category, instructions, readButton } = declareVar();
-
         div.classList = "drinkContainer"
         drinkContainer.appendChild(div)
         thumbnail.src = e.strDrinkThumb
@@ -85,13 +76,12 @@ function showResults(result) {
         div.appendChild(drink)
         category.innerText = e.strCategory
         div.appendChild(category)
-
         instructions.innerText = e.strInstructions
         instructions.style.display = "none"
         div.appendChild(instructions)
         readButton.innerHTML = "Read more"
         readButton.classList = "readButton"
-        readButton.addEventListener ('click', () => {
+        readButton.addEventListener('click', () => {
             if (instructions.style.display === "none") {
                 instructions.style.display = "inline"
 
@@ -100,29 +90,22 @@ function showResults(result) {
                 instructions.style.display = "none"
                 readButton.innerText = "Read more"
             }
-        }) // read more func
-    
-    
+        })
 
         drinkIngr.forEach((e, i) => {
             if (e !== null) {
                 let drinkIngredients = document.createElement('li')
-
-                drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e: " " + e
+                drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e : " " + e
                 drinkIngredients.classList = "drinkIngredients"
                 drinkIngredients.style.display = "none"
                 div.appendChild(drinkIngredients)
-                 readButton.addEventListener('click', () => {
+                readButton.addEventListener('click', () => {
                     drinkIngredients.style.display === "none" ?
-                        drinkIngredients.style.display = "inline" : drinkIngredients.style.display = "none" 
-               
-                }) 
+                        drinkIngredients.style.display = "inline" : drinkIngredients.style.display = "none"
+                })
             }
         })
-
-
         div.appendChild(readButton)
-
     })
 
     function declareVar() {

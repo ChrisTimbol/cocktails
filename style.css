@@ -3,19 +3,21 @@
     padding: 0;
 }
 
+body {
+    background-color: black;
+}
 .searchContainer {
     display: flex;
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 400px;
-    left: 750px;
+    bottom: 650px;
+    left: 1450px;
 }
 
 #inputText, #searchButton, #randomButton {
-    font-size: 32px;
+    font-size: 36px;
 }
-
 
 .thumbnail-image {
     width: 300px;  
@@ -26,26 +28,33 @@
 #mainDrinkContainer {
     display: flex;
     justify-content: center;
-    flex: 0 0 33.33333%;
     position: absolute;
-    top: 26vh;
+    top: 350px;
     left: 16vw;
     overflow-x: hidden;
+    overflow-y: hidden;
     width: 70vw;
- /*    cursor: grab; */
-
+    white-space: nowrap;
+    transition: all 2s;
+    transform: scale(0.92);
+    will-change: transform;
+    user-select: none; 
+    cursor: pointer;
 }
 
 .drinkContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-/*     border: 1px solid black;  */
     padding: 1vw;
     font-size: 24px;
     justify-content: center;
+    height: 20vw;
 }
 
+.drinkContainer:hover {
+    transform: scale(1.3)
+}
 .recipe {
     display: flex;
 }
@@ -58,20 +67,53 @@
 .bartenderImage {
     width: 80vw;
     height: 80vh;
+
 }
 
-.barText {
-    font-size: 24px;
-    font-weight: bold;
+.bartenderImage2 {
     position: absolute;
-    top:  11vh;
-    left: 34vw;
+    z-index: 0;
+    width: 80vw;
+    height: 80vh;
+    transition: opacity ;
 }
 
-/* .instructions {
+.bartenderImage2:hover {
     display: none;
-} */
+
+}
 
 .readButton {
     font-size: 0.8vw;
+}
+
+.barText {
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+    /* for demo purpose */
+    width:300px;
+    margin:0 auto;
+    font-size: 1.05vw;
+    font-weight: bolder;
+    position: absolute;
+    top:  10vh;
+    left: 34vw;
+    white-space: nowrap;
+}
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width:0%;
+    background:white;
+    animation-iteration-count: 1;
+    animation: showHide  1s  alternate ease-in;
+
+}
+
+@keyframes showHide {
+    0% {width:100%}
+    40% {width:0%}
+    60% {width:0%;}
+    100% {width:0%;}
 }
