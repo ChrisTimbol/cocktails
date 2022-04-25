@@ -59,12 +59,12 @@ body {
     font-size: 1.4vw;
     color: white;
     justify-content: center;
-    width: 100vw;
+    width: 80vw;
     
 }
 
 .drinkContainer:hover {
-    transform: scale(1.1)
+    transform: scale(1.08)
 }
 
 .barContainer {
@@ -106,22 +106,19 @@ body {
     position:relative;
     overflow:hidden;
     width:300px;
-    margin:0 auto;
     font-size: 1.02vw;
     font-weight: bolder;
     position: absolute;
-    top:  12vh;
+    top:  15.8vh;
     left: 33.5vw;
-/*     white-space: nowrap; */
 }
-.fadingEffect {
+/* .fadingEffect {
     position:absolute;
     top:0; bottom:0; right: 0;
     width:0;
     background:white;
     animation-iteration-count: 1;
     animation: shower 2s  alternate ease-in;
-
 }
 
 @keyframes shower {
@@ -129,7 +126,7 @@ body {
     40% {width:0%;}
     60% {width:0%;}
     100% {width:0%;}
-}
+} */
 
 .footer {
     display: flex;
@@ -152,4 +149,8 @@ body {
 
 .header {
     color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 3vw;
 }
