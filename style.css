@@ -31,7 +31,7 @@ body {
 
 
 .thumbnail-image {
-    width: 300px;  
+    width: 18vw; 
     border-radius: 50%;
 }
 
@@ -45,7 +45,7 @@ body {
     transition: all 2s;
     transform: scale(0.92);
     will-change: transform;
-    user-select: none;  
+    user-select: none;   
     cursor: pointer;
     overflow-x: hidden;
     overflow-y: hidden;
