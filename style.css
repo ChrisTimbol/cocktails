@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 600px;
+    bottom: 300px;
     
 
 }
@@ -40,8 +40,8 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 350px;
-    left: 1vw;
+    top: 500px;
+    left: 1vw; 
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
@@ -57,11 +57,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1vw;
-    font-size: 36px;
+    padding: 1vh;
+    font-size: 30px;
     color: white;
     justify-content: center;
-
+    
 }
 
 .drinkContainer:hover {
@@ -83,7 +83,7 @@ body {
     z-index: 0;
     width: 80vw;
     height: 80vh;
- /*    transition:  */
+
 }
 
 .bartenderImage2:hover {
@@ -92,10 +92,10 @@ body {
 }
 
 .readButton {
-    font-size: 0.8vw;
+    font-size: 32px;
     background: black;
     color: white;
-/*     z-index: 1; */
+
 }
 
 .readButton:hover {
@@ -117,17 +117,17 @@ body {
 }
 .fadingEffect {
     position:absolute;
-    top:0; bottom:0; right:0;
+    top:0; bottom:0; right: 110px;
     width:0%;
-    background:white;
+    background:red;
     animation-iteration-count: 1;
     animation: shower 2s  alternate ease-in;
 
 }
 
 @keyframes shower {
-    0% {width:100%}
-    40% {width:0%}
+    0% {width:100%;}
+    40% {width:0%;}
     60% {width:0%;}
     100% {width:0%;}
 }
