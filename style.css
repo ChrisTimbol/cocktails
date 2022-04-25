@@ -112,6 +112,7 @@ body {
     top:  15.8vh;
     left: 33.5vw;
 }
+/** Has issues with GH Pages **/
 /* .fadingEffect {
     position:absolute;
     top:0; bottom:0; right: 0;
@@ -147,9 +148,10 @@ body {
     font-size: 66px;
 }
 
-.header {
+.header { 
+    display: flex;
+    justify-content: center;
     color: white;
-    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 3vw;
