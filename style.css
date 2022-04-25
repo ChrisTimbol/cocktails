@@ -8,15 +8,14 @@ body {
 }
 .searchContainer {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: absolute;
-    bottom: 650px;
-    left: 1450px;
+    justify-content: center;
+    position: relative;
+    bottom: 600px;
+    
+
 }
 
 .inputText, .searchButton, .randomButton {
-
     font-size: 36px;
     font-weight: bold;
     font-family: serif;
@@ -31,22 +30,10 @@ body {
     color: white;
 }
 
-.inputText {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.buttonContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .thumbnail-image {
     width: 300px;  
     border-radius: 50%;
-
 }
 
 .mainDrinkContainer {
@@ -72,7 +59,6 @@ body {
     align-items: center;
     padding: 1vw;
     font-size: 36px;
-
     color: white;
     justify-content: center;
 
@@ -80,9 +66,6 @@ body {
 
 .drinkContainer:hover {
     transform: scale(1.1)
-}
-.recipe {
-    display: flex;
 }
 
 .barContainer {
@@ -93,7 +76,6 @@ body {
 .bartenderImage {
     width: 80vw;
     height: 80vh;
-
 }
 
 .bartenderImage2 {
@@ -123,9 +105,7 @@ body {
 
 .barText {
     position:relative;
-
     overflow:hidden;
-    /* for demo purpose */
     width:300px;
     margin:0 auto;
     font-size: 1.02vw;
@@ -155,11 +135,7 @@ body {
 .footer {
     display: flex;
     justify-content: center;
-
-    
     color:white;
- 
-
 }
 
 .apiLink {
