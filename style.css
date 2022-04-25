@@ -31,7 +31,8 @@ body {
 
 
 .thumbnail-image {
-    width: 18vw; 
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
 }
 
@@ -59,6 +60,7 @@ body {
     color: white;
     justify-content: center;
     width: 80vw;
+
     
 }
 

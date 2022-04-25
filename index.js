@@ -75,6 +75,7 @@ function showResults(result) {
         drinkContainer.appendChild(div)
         thumbnail.src = e.strDrinkThumb
         thumbnail.classList = "thumbnail-image"
+        thumbnail.style.height = "300px"
         div.appendChild(thumbnail)
         drink.innerText = e.strDrink
         drink.classList = "drinkName"
