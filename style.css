@@ -5,23 +5,23 @@
 
 body {
     background-color: black;
-    height: 105vh;
+    height: 101vh;
 }
 .searchContainer {
     display: flex;
     justify-content: center;
     position: relative;
-    bottom: 300px;
+    bottom: 20vh;
 }
 
 .inputText, .searchButton, .randomButton {
-    font-size: 36px;
+    font-size: 1.4vw;
     font-weight: bold;
     font-family: serif;
     background: white;
     color: black;
     border-radius: 10px;
-    padding: 2px;
+
 }
 
 .inputText:hover, .searchButton:hover, .randomButton:hover {
@@ -39,24 +39,24 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 500px;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    bottom: 50vw;
     width: 100vw;
     white-space: nowrap;
     transition: all 2s;
     transform: scale(0.92);
- will-change: transform;
+    will-change: transform;
     user-select: none;  
     cursor: pointer;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .drinkContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1vh;
-    font-size: 30px;
+    padding: 1vw;
+    font-size: 1.2vw;
     color: white;
     justify-content: center;
     width: 100vw;
@@ -112,12 +112,12 @@ body {
     position: absolute;
     top:  11vh;
     left: 33vw;
-    white-space: nowrap;
+/*     white-space: nowrap; */
 }
 .fadingEffect {
     position:absolute;
-    top:0; bottom:0; right: 110px;
-    width:0%;
+    top:0; bottom:0; right: 0;
+    width:100%;
     background:white;
     animation-iteration-count: 1;
     animation: shower 2s  alternate ease-in;
@@ -125,7 +125,7 @@ body {
 }
 
 @keyframes shower {
-    0% {width:100%;}
+    0% {width:70%;}
     40% {width:0%;}
     60% {width:0%;}
     100% {width:0%;}
