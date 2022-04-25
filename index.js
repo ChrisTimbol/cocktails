@@ -10,9 +10,18 @@ const randomButton = document.getElementsByClassName('randomButton')[0].addEvent
     randomize()
 })
 const inputText = document.getElementsByClassName('inputText')[0]
-const searchButton = document.getElementsByClassName('searchButton')[0].addEventListener("click", () => {
+let searchButton = document.getElementsByClassName('searchButton')[0]
+
+
+searchButton.addEventListener("click", () => {
     searchDrink()
 })
+inputText.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        searchDrink();
+    }
+}) 
 
 const drinkContainer = document.getElementsByClassName('mainDrinkContainer')[0]
 let isDown = false;
