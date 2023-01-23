@@ -56,6 +56,13 @@ body {
     color: black;
 }
 
+@media(min-width: 1600px){ // for bigger screens fix thumbnail size
+    .thumbnail-image {
+        width: 12vw;
+        height: 12vw;
+    }
+
+}
 
 @media (max-width: 900px) {
     .mainDrinkContainer {
