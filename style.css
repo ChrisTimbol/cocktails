@@ -28,8 +28,8 @@ body {
     justify-content: center;
 }
 .thumbnail-image {
-    width: 16vw;
-    height: 16vh;
+    width: 14vw;
+    height: 18vh;
     border-radius: 10%;
 }
 .drinkDetail {
@@ -56,10 +56,10 @@ body {
     color: black;
 }
 
-@media(min-width: 1600px){ // for bigger screens fix thumbnail size
+@media(max-width: 1600px){ // for bigger screens fix thumbnail size
     .thumbnail-image {
-        width: 12vw;
-        height: 12vw;
+        width: 14vw;
+        height: 16vh;
     }
 
 }
