@@ -19,18 +19,33 @@ body {
 }
 .mainDrinkContainer { /* drink container */
     display: flex;
+    justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
 
 }
+
 .searchContainer {
     display: flex;
     justify-content: center;
+    margin: 2px;
+
+
+}
+.inputText{
+    font-size:14px;
+}
+.buttonContainer{
+    display: flex;
+
+}
+ .randomButton, .searchButton{
+    margin-left: 1px;
 }
 .thumbnail-image {
-    width: 14vw;
-    height: 18vh;
-    border-radius: 10%;
+    width: 25vw;
+    height: 40vh; 
+    border-radius: 5%;
 }
 .drinkDetail {
     display: flex;
@@ -40,9 +55,7 @@ body {
     color: black;
     justify-content: center;
 }
-.readButton, .searchButton, .randomButton {
-    cursor: pointer;
-}
+
 .footer {
     display: flex;
     justify-content: center;
@@ -55,50 +68,36 @@ body {
 .apiLink:hover {
     color: black;
 }
-
-@media(max-width: 1600px){ // for bigger screens fix thumbnail size
-    .thumbnail-image {
-        width: 14vw;
-        height: 16vh;
-    }
-
-}
-
 @media (max-width: 900px) {
     .mainDrinkContainer {
         flex-direction: column;
         overflow-y: auto;
     }
+
+    .searchContainer{
+        justify-content: space-around;
+    }
     .thumbnail-image {
-        width: 50vw;
-        height: 50vw;
+        width: 90vw;
+        height: 90vw;
     }
 
-    .inputText{
-        margin-left: 1rem;
-        height: 1.7rem;
-        
-    }
+
     .drinkDetail{
         padding: 2vw;
+    }
+    .readButton, .searchButton, .randomButton{
+
     }
 }
 
 /* button styling */
 .readButton, .searchButton, .randomButton {
-  align-items: center;
-  background-clip: padding-box;
   background-color: #fa6400;
   border: 1px solid transparent;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  justify-content: center;
-  margin: 0;
   padding: calc(0.5rem - 1px) calc(1.2rem - 1px);
-  position: relative;
-  text-decoration: none;
   transition: all 250ms;
   user-select: none;
   -webkit-user-select: none;
