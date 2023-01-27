@@ -14,7 +14,9 @@ body {
     display: flex;
     justify-content: center;
     color: black;
-    font-family: Verdana, sans-serif;
+    font-family: Bebas Neue;
+    font-size: 5rem;
+    font-weight: 600;
 
 }
 .mainDrinkContainer { /* drink container */
