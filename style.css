@@ -24,7 +24,7 @@ body {
     justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
-
+    cursor: grab;
 }
 
 .searchContainer {
@@ -70,10 +70,12 @@ body {
 .apiLink:hover {
     color: black;
 }
+
 @media (max-width: 900px) {
     .mainDrinkContainer {
         flex-direction: column;
         overflow-y: auto;
+       
     }
 
     .searchContainer{
