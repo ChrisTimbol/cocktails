@@ -72,6 +72,9 @@ body {
 }
 
 @media (max-width: 900px) {
+    .header{
+        font-size: 4rem;
+    }
     .mainDrinkContainer {
         flex-direction: column;
         overflow-y: auto;
