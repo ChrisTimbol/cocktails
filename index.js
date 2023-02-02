@@ -54,10 +54,8 @@ function randomize() { // fetchs a random drink and details
 }
 
 function showResults(result) {
-    const drinkNames = result.drinks;
-    console.log(drinkNames)
+    const drinkNames = result.drinks; 
 
-    
     drinkNames.forEach((e) => { // all the api data
         // all the ingredients of drink
         const drinkIngr = [e.strIngredient1, e.strIngredient2, e.strIngredient3,
@@ -69,7 +67,7 @@ function showResults(result) {
         e.strMeasure9, e.strMeasure10, e.strMeasure11, e.strMeasure12, e.strMeasure13,
         e.strMeasure14, e.strMeasure15]
 
-        // api elements
+        // 'unpack's api elements from declareVar 
         let { div, thumbnail, drink, category, instructions, readButton } = declareVar();
         
         div.classList = "drinkDetail" // drink css 
@@ -102,14 +100,14 @@ function showResults(result) {
         div.appendChild(category)
         div.appendChild(instructions)
 
-        drinkIngr.forEach((e, i) => {
+        drinkIngr.forEach((e, i) => { /* for each drink ingredient that isnt null  */
             if (e !== null) {
                 let drinkIngredients = document.createElement('li')
-                drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e : " " + e
-                drinkIngredients.classList = "drinkIngredients"
+                drinkIngredients.innerText = (drinkMeas[i] != null) ? drinkMeas[i] + " " + e : " " + e /* spacing of inredients*/
+                drinkIngredients.classList = "drinkIngredients" /* class for drink ingred */
                 drinkIngredients.style.display = "none"
-                div.appendChild(drinkIngredients)
-                readButton.addEventListener('click', () => {
+                div.appendChild(drinkIngredients) 
+                readButton.addEventListener('click', () => { /* when read button is clicked display ingredients */
                     drinkIngredients.style.display === "none" ?
                         drinkIngredients.style.display = "inline" : drinkIngredients.style.display = "none"
                 })
@@ -118,7 +116,7 @@ function showResults(result) {
         div.appendChild(readButton)
     })
 
-    function declareVar() {
+    function declareVar() { /* create element for each detail in attribute that we want to collect */
         let div = document.createElement('div')
         let thumbnail = document.createElement('img')
         let drink = document.createElement('h3')
