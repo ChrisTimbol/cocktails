@@ -1,11 +1,3 @@
-// add input box click enter
-// add style to box and buttons
-// add better background
-// add footer to api
-// fix char smile
-// add text responses to cloudbox
-// fix github page
-
 
 const randomButton = document.getElementsByClassName('randomButton')[0].addEventListener("click", randomize)
 const searchButton = document.getElementsByClassName('searchButton')[0].addEventListener("click", searchDrink)
@@ -65,6 +57,7 @@ function showResults(result) {
     const drinkNames = result.drinks;
     console.log(drinkNames)
 
+    
     drinkNames.forEach((e) => { // all the api data
         // all the ingredients of drink
         const drinkIngr = [e.strIngredient1, e.strIngredient2, e.strIngredient3,
