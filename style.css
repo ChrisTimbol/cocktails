@@ -11,7 +11,7 @@ body {
 }
 
 .title {   
-    display: flex;
+    display: flex; 
     justify-content: center;
     color: black;
     font-family: Bebas Neue;
@@ -47,6 +47,7 @@ body {
 .searchContainer {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 2px;
     
 }
